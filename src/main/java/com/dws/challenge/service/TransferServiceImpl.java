@@ -74,7 +74,11 @@ public class TransferServiceImpl implements TransferService {
     }
     notificationService.notifyAboutTransfer(
         to,
-        "Dude someone send money for you, please check it. And do not forget to pay a tax"
+        "Dude someone with Id:" + accountFromId +" send money(" + amount + ") for you, please check it. And do not forget to pay a tax"
+    );
+    notificationService.notifyAboutTransfer(
+        from,
+        "Dude someone you money(" + amount + ") for " + accountToId + ", please check that he pay the tax."
     );
   }
 
